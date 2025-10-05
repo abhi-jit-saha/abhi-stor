@@ -1,0 +1,237 @@
+/* ===========================
+   Base Styles
+=========================== */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    padding-top: 76px; /* account for fixed navbar */
+    line-height: 1.6;
+  }
+  
+  /* ===========================
+     Navbar
+  =========================== */
+  .navbar-nav .nav-link {
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: var(--bs-primary) !important;
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: var(--bs-primary) !important;
+    font-weight: 600;
+  }
+
+  .navbar-dark {
+    --bs-emphasis-color: #F5F9FC;
+    --bs-emphasis-color-rgb: rgb(#F5F9FC);
+}
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.navbar-dark, .navbar[data-bs-theme=dark] {
+    --bs-navbar-color: rgba(22, 24, 189, 0.55);
+    --bs-navbar-hover-color: rgba(218, 47, 180, 0.75);
+    --bs-navbar-disabled-color: rgba(252, 252, 252, .25);
+    --bs-navbar-active-color: #FCFCFC;
+    --bs-navbar-brand-color: #FCFCFC;
+    --bs-navbar-brand-hover-color: #FCFCFC;
+    --bs-navbar-toggler-border-color: rgba(252, 252, 252, .1);
+    --bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28252, 252, 252, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);
+}
+
+
+  /* ===========================
+     Hero Section
+  =========================== */
+  .hero {
+    background: linear-gradient(135deg, var(--bs-dark) 0%, var(--bs-secondary) 100%);
+    color: #fff;
+    padding: 100px 0;
+    border-radius: 0 0 30px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(13, 110, 253, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+  
+  .hero p.lead {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  
+  .hero .btn {
+    transition: all 0.3s ease;
+  }
+  
+  .hero .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* ===========================
+     Cards
+  =========================== */
+  .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  #programs .card {
+    border: 2px solid transparent;
+  }
+  
+  #programs .card:hover {
+    border-color: var(--bs-primary) !important;
+  }
+  
+  /* ===========================
+     Skills (About section)
+  =========================== */
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .skill-pill {
+    background: var(--bs-primary);
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+  }
+  
+  .skill-pill:hover {
+    background: #0056b3;
+  }
+  
+  /* ===========================
+     Contact Section
+  =========================== */
+  #contact h6 {
+    font-weight: 600;
+  }
+  
+  #contact a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  #contact .btn-outline-secondary {
+    transition: all 0.3s ease;
+  }
+  
+  #contact .btn-outline-secondary:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* ===========================
+     Footer
+  =========================== */
+  footer {
+    border-top: 2px solid var(--bs-primary);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  
+  /* ===========================
+     Scrollbar (Webkit Browsers)
+  =========================== */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--bs-dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--bs-primary);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+  }
+  
+  /* ===========================
+     Responsive Adjustments
+  =========================== */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p.lead {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    body {
+      padding-top: 70px;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+  }
+
+  /* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 999;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #backToTop:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+  }
